@@ -1,0 +1,161 @@
+\documentclass[a4paper,11pt]{paper}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=3.2cm]{geometry}
+\usepackage{enumitem}
+\usepackage{CJKutf8}
+\usepackage[colorlinks=true,urlcolor=blue,linkcolor=black]{hyperref}
+\usepackage{mathtools}
+\usepackage{listings}
+\usepackage{fancyvrb}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{calc}
+\usepackage{relsize}
+\usepackage{emoji}  % lualatex
+\usepackage{fontawesome}  % lualatex
+\usepackage{fancyvrb}
+
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} % clear existing header/footer entries
+% Place Page X of Y on the right-hand
+% side of the footer
+\fancyfoot[R]{Page \thepage \hspace{1pt} of \pageref{LastPage}}
+
+\usetikzlibrary{calc,shapes.multipart,chains,arrows}
+
+\renewcommand*{\theenumi}{\thesection.\arabic{enumi}}
+\renewcommand*{\theenumii}{\theenumi.\arabic{enumii}}
+\let\orighref\href
+\renewcommand{\href}[2]{\orighref{#1}{#2\,\smaller[4]\faExternalLink}}
+
+\let\Red=\alert
+\definecolor{few-gray-bright}{HTML}{010202}
+\definecolor{few-red-bright}{HTML}{EE2E2F}
+\definecolor{few-green-bright}{HTML}{008C48}
+\definecolor{few-blue-bright}{HTML}{185AA9}
+\definecolor{few-orange-bright}{HTML}{F47D23}
+\definecolor{few-purple-bright}{HTML}{662C91}
+\definecolor{few-brown-bright}{HTML}{A21D21}
+\definecolor{few-pink-bright}{HTML}{B43894}
+
+\definecolor{few-gray}{HTML}{737373}
+\definecolor{few-red}{HTML}{F15A60}
+\definecolor{few-green}{HTML}{7AC36A}
+\definecolor{few-blue}{HTML}{5A9BD4}
+\definecolor{few-orange}{HTML}{FAA75B}
+\definecolor{few-purple}{HTML}{9E67AB}
+\definecolor{few-brown}{HTML}{CE7058}
+\definecolor{few-pink}{HTML}{D77FB4}
+
+\definecolor{few-gray-light}{HTML}{CCCCCC}
+\definecolor{few-red-light}{HTML}{F2AFAD}
+\definecolor{few-green-light}{HTML}{D9E4AA}
+\definecolor{few-blue-light}{HTML}{B8D2EC}
+\definecolor{few-orange-light}{HTML}{F3D1B0}
+\definecolor{few-purple-light}{HTML}{D5B2D4}
+\definecolor{few-brown-light}{HTML}{DDB9A9}
+\definecolor{few-pink-light}{HTML}{EBC0DA}
+
+\colorlet{alert-color}{few-red-bright!80!black}
+\colorlet{comment}{few-blue-bright}
+\colorlet{string}{few-green-bright}
+
+\lstdefinestyle{ccode}{
+    showstringspaces=false,
+    stringstyle={\ttfamily\color{string}},
+    language=C,escapeinside=`',columns=flexible,commentstyle=\color{comment},
+    basicstyle=\ttfamily,
+    classoffset=2, keywordstyle=\color{alert-color}
+}
+
+\lstnewenvironment{ccode}[1][]%
+    {\lstset{style=ccode,basicstyle=\ttfamily\openup-.17\baselineskip,#1}}%
+    {}
+
+\lstset{
+  basicstyle=\itshape,
+  xleftmargin=3em,
+  literate={->}{$\rightarrow$}{2}
+           {α}{$\alpha$}{1}
+           {δ}{$\delta$}{1}
+           {ε}{$\epsilon$}{1}
+}
+
+\renewcommand{\baselinestretch}{1.1}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1em}
+
+\title{INF333 2023-2024 Spring Semester}
+\author{Student 1 Name <email@domain.example>
+\\ Student 2 Name <email@domain.example>}
+
+\begin{document}
+
+\maketitle
+
+\section*{\LARGE TP05 Design Document}
+
+The following is the sample design document for this TP. We will provide the general layout and the questions, you will provide answers in the \texttt{quote} environment.
+
+
+\section{Preliminaries}
+
+If you have any preliminary comments on your submission, notes for the TAs, or extra credit, please give them here.
+
+Please cite any offline or online sources you consulted while preparing your
+submission, other than the Pintos documentation, course text, and lecture notes.
+
+
+\section{Booting Pintos}
+
+
+\textbf{Q 2.1:} Take screenshots of the successful booting of Pintos in QEMU and Bochs, each in
+both the terminal and the QEMU window. Put the screenshots under
+\textttt{`pintos/src/p0`}.
+
+\textbf{A 2.1:}
+
+\section{Debugging}
+
+\subsection{Questions About BIOS}
+
+
+\textbf{Q 2.2:} Your first task in this section is to use GDB to trace the QEMU BIOS a bit to understand how an IA-32 compatible computer boots. Answer the following questions in your design document: 
+\begin{itemize}
+    \item What is the first instruction that gets executed? 
+    \item At which physical address is this instruction located? 
+    \item Can you guess why the first instruction is like this?
+    \item What are the next three instructions?
+\end{itemize}
+
+\textbf{A 2.2:}
+
+
+\textbf{Q 2.3:}Trace the Pintos bootloader and answer the following questions in your design document:
+\begin{itemize}
+    \item How does the bootloader read disk sectors? In particular, what BIOS interrupt is used?
+    \item How does the bootloader decides whether it finds the Pintos kernel?
+    \item What happens when the bootloader could not find the Pintos kernel?
+    \item At what point does the bootloader transfer control to the Pintos kernel?
+\end{itemize}
+
+\textbf{A 2.3:}
+
+
+\textbf{Q 2.4:} Add a screenshot of gdb while tracing the Pintos kernel.
+
+\textbf{A 2.4:}
+
+
+
+
+
+
+\end{document}
